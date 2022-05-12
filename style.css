@@ -1,0 +1,473 @@
+
+body{
+    background-color:rgb(90, 80, 80);
+    overflow:hidden;
+  }
+  :root{
+  
+    --cursorXpos:50vw;
+    --cursorYpos: 50vh;
+  }
+
+  :root::before{
+    width: 100%;
+    height:100%;
+    position: fixed;
+    background:radial-gradient(
+      circle 15rem at var(--cursorXpos) var(--cursorYpos) , 
+      rgba(0,0,0,0) 0%, rgba(0,0,0,0.95) 100%);
+      z-index: 999;
+    
+  }
+
+  *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+  }
+
+  .main{
+    position:relative;
+    width:100%;
+    height:100vh;
+  }
+  .container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .container h1:nth-child(1) {
+    color: #F5E4E5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    margin: 0 0 0 35%;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 175px;
+    animation: type 2s steps(40,end) forwards;
+  }
+  
+  .container h1:nth-child(2) {
+    opacity: 0;
+    font-family: "Work Sans", sans-serif;
+    margin: 0 auto auto auto;
+    background: linear-gradient(to right, 	#ffb3ba,	#ffdfba ,	#ffffba, #baffc9 );
+    font-weight: 800;
+    font-size: 100px;  
+    width: 430px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+    animation: shring-animation 2.2s steps(40,end) 2s forwards, blink .5s step-end infinite alternate;
+  }
+  
+  @keyframes shring-animation {
+    0% {
+      background-position: 0 0;
+      opacity: 0;
+      width: 0;
+    }
+    1% {
+      background-position: 0 0;
+      opacity: 1;
+      border-right: 1px solid orange;
+    }
+    50% {
+      background-position: 150px 0;
+      opacity: 1;
+      border-right: 1px solid orange;
+    }
+    100% {
+      background-position: 400px 0;
+      opacity: 1;
+      border-right: 1px solid orange;
+    }
+  }
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    1%, 99%{
+      border-right: 1px solid orange;
+    }
+    100%{
+      border-right: none;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .blue{
+      left: 100px;
+      top:10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 100px;
+      margin-left:auto;
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient (to right, #ccc 50%, #fff858 50%, #cc2e5D 50%);
+      transition:1.1s ease-out;
+      position:absolute;
+      left:700px;
+      width: 30px;
+      height:30px;
+
+  }
+
+
+  .blue span
+{
+    position: absolute;
+    left:-300px;
+    top:500px;
+	
+    width: calc(180px + var(--i));
+    height:calc(180px + var(--i));
+    background: var(--clr); 
+    border-radius:100%;
+    transform-origin: calc(60px + var(--i));
+    animation: animate 5s linear infinite;
+    animation-duration: calc(var(--d));
+    mix-blend-mode: plus-glow;
+    filter: blur(7px);
+    visibility: visible;
+    z-index: -1;
+}
+
+.blue span:hover{
+	filter: blur(20px);
+}
+.blue span:nth-child(even)
+{
+    animation-direction: reverse;
+}
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}
+
+}
+
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}}
+
+  .pink{
+    color:black;
+    position:relative;
+    left:800px;
+    top:10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    margin-left:auto;
+    font-weight: 800;
+    text-decoration: none;
+    background: linear-gradient (to right, #ccc 50%, #fff858 50%, #cc2e5D 50%);
+    transition:1s ease-out;
+    
+
+
+  }
+
+  .pink span
+{
+    position: absolute;
+    left:-30px;
+    top:80px;
+    width: calc(300px + var(--i));
+    height:calc(300px + var(--i));
+    background: var(--clr); 
+    border-radius:100%;
+    transform-origin: calc(100px + var(--i));
+    animation: animate 5s linear infinite;
+    animation-duration: calc(var(--d));
+    mix-blend-mode: plus-;
+    filter: blur(7px);
+    visibility: visible;
+    z-index: -1;
+}
+.pink span:nth-child(even)
+{
+    animation-direction: reverse;
+}
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}
+
+}
+
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}}
+
+.pink span:hover{
+	filter: blur(20px);
+}
+
+.purple span
+{
+    position: absolute;
+    left:100px;
+    top:100px;
+    width: calc(350px + var(--i));
+    height:calc(350px + var(--i));
+    background: var(--clr); 
+    border-radius:100%;
+    transform-origin: calc(125px + var(--i));
+    animation: animate 5s linear infinite;
+    animation-duration: calc(var(--d));
+    mix-blend-mode: plus-;
+    filter: blur(7px);
+    visibility: visible;
+    z-index: -1;
+}
+
+.purple span:hover{
+	filter: blur(20px);
+}
+.purple span:nth-child(even)
+{
+    animation-direction: reverse;
+}
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}
+
+}
+
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}}
+
+
+
+
+
+.orange span
+{
+    position: absolute;
+   left:1200px;
+    top:100px;
+    width: calc(200px + var(--i));
+    height:calc(200px + var(--i));
+    background: var(--clr); 
+    border-radius:100%;
+    transform-origin: calc(60px + var(--i));
+    animation: animate 5s linear infinite;
+    animation-duration: calc(var(--d));
+    mix-blend-mode: plus-;
+    filter: blur(7px);
+    visibility: visible;
+    z-index: -1;
+}
+.orange span:nth-child(even)
+{
+    animation-direction: reverse;
+}
+
+.orange span:hover{
+	filter: blur(20px);
+}
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}
+
+}
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}}
+
+
+.pink{
+    color:black;
+    position:relative;
+    left:800px;
+    top:10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    margin-left:auto;
+    font-weight: 800;
+    text-decoration: none;
+    background: linear-gradient (to right, #ccc 50%, #fff858 50%, #cc2e5D 50%);
+    transition:1s ease-out;
+    
+
+
+  }
+
+  .peach span
+{
+    position: absolute;
+    left:1300px;
+    top:500px;
+    width: calc(300px + var(--i));
+    height:calc(300px + var(--i));
+    background: var(--clr); 
+    border-radius:100%;
+    transform-origin: calc(90px + var(--i));
+    animation: animate 5s linear infinite;
+    animation-duration: calc(var(--d));
+    mix-blend-mode: plus-;
+    filter: blur(7px);
+    visibility: visible;
+    z-index: -1;
+}
+.peach span:nth-child(even)
+{
+    animation-direction: reverse;
+}
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}
+
+}
+
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}}
+
+.peach span:hover{
+	filter: blur(20px);
+}
+
+
+.turquoise span
+{
+    position: absolute;
+    left:-10px;
+    top:600px;
+    width: calc(250px + var(--i));
+    height:calc(250px + var(--i));
+    background: var(--clr); 
+    border-radius:100%;
+    transform-origin: calc(90px + var(--i));
+    animation: animate 5s linear infinite;
+    animation-duration: calc(var(--d));
+    mix-blend-mode: plus-;
+    filter: blur(7px);
+    visibility: visible;
+    z-index: -1;
+}
+.turqoise span:nth-child(even)
+{
+    animation-direction: reverse;
+}
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}
+
+}
+
+
+@keyframes animate
+{
+ 0%
+{
+transform:rotate(0deg);
+}
+ 100%
+{
+    transform: rotate(360deg);
+}}
+
+.turqoise span:hover{
+	filter: blur(20px);
+}
